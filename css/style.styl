@@ -1,0 +1,271 @@
+blanco = #fff
+gris = #ededed
+rojo = #961a1a
+cyan = #057091
+
+@import 'nib'
+vendor-prefixes = o ms mz webkit official
+
+html,body
+	font-family 'Open Sans', sans-serif
+	font-size 16px
+
+html,body,.cabecera
+	height 100%
+
+footer
+	background cyan
+	height 10px
+	width 100%
+.cabecera
+	background url('../img/studio.jpg') no-repeat center center fixed
+	background-size cover
+	position relative
+	text-align center
+	#nombre
+		transform translateY(-50%)
+		top 45%
+		position relative
+		margin 0
+		padding 0
+		img
+			display block
+			max-width 330px
+			margin 0 auto
+			width 70%
+	.menu
+		background rgba(0,0,0,0.5)
+		bottom 0 
+		position absolute
+		width 100%
+		#menuIco
+			font-size 2em
+			color blanco
+			display none
+		.botonera
+			text-align left
+			display inline-block
+			vertical-align top
+			width 60%
+			ul
+				list-style none
+				margin 0
+				padding 0
+				li
+					display inline-block
+					vertical-align top
+					margin 1em 1em 
+					a
+						color gris
+						text-decoration none
+		.redes
+			display inline-block
+			vertical-align top
+			width 30%
+			a
+				color blanco	
+				font-family sans-serif
+				padding 1em .5em
+				text-decoration none
+				i
+					font-size 26px
+					padding 1em 0 .5em .25em 
+.contacto
+	margin 0 auto
+	padding 0 0 2em 0 
+	width 80%
+	form
+		.campo
+			display block
+			margin 1em 0
+			label
+				display block
+				margin .5em 0
+				font-size 1.2em
+				color rojo
+			input
+			textarea
+				border 1px solid cyan
+				border-radius .25em
+				display block
+				font-size 1em
+				padding .5em 0 .5em .25em
+				width 100%
+			textarea
+				height 90px
+		#enviar
+			background rojo
+			border 0
+			border-radius .25em
+			color blanco
+			display block
+			padding .7em 0
+			width 30%
+
+
+.info
+	margin 0 auto
+	width 90%
+	.infoPersonal
+		display inline-block
+		vertical-align top
+		width 48%
+		h1
+			color rojo
+			font-size 3em
+		ul
+			li
+				a
+					color cyan
+					&:hover
+						color rojo
+			span
+				color cyan
+				font-size 1.2em
+	.experiencia
+		display inline-block
+		padding 2em 0 0 0
+		text-align right
+		vertical-align top
+		width 48%
+		h2
+			color cyan
+.trabajos
+	background gris
+	padding 2em 0
+	text-align center
+	h2
+		font-size 2em
+		color rojo
+	.row
+		margin 0 0 1.5em 0
+		width auto
+	.trabajo
+		display inline-block
+		margin .6em .8em 
+		vertical-align top
+		width 25%
+		figure
+			height 100%
+			margin 0 
+			padding 0
+			overlay hidden
+			position relative
+			img
+				width 100%
+			.overlay
+				bottom 0 
+				position absolute
+				transition all ease 0.6s
+				top 0
+				width 100%
+				p
+					color blanco
+					opacity 0
+					font-weight 600
+					text-shadow 1px 1px 3px rgba(0,0,0,0.5)
+					&.prin
+						font-size 1.5em
+					&.sec
+						font-size 1.2em
+				&:hover
+					opacity 0.8
+					background rgba(5,112,145,0.9)
+					transition all ease 1s
+					p
+						opacity 1
+						transition all ease 1s
+		a
+			color rojo
+			font-size 1.2em 
+			margin 1em 0
+			&:hover
+				transition all ease 0.6s 
+				color cyan
+		p
+			font-size 1.3em
+			color #969696
+			font-weight 300
+
+
+@media (max-width: 769px)
+	.trabajos
+		.trabajo
+			width 38%
+
+@media (max-width: 640px)
+	.cabecera
+		background-size cover;	
+		.menu
+			#menuIco
+				padding .5em 0 0 0
+				display inline-block
+				cursor pointer
+				margin  0
+			.botonera
+				background #000;
+				display none
+				padding .5em 0
+				width 100%
+				ul
+					li
+						display block
+						text-align center
+						a
+							font-size 1.5em	
+			.redes
+				font-size 3em
+				padding .5em 0 0 0
+				vertical-align top
+				width 70%
+				a
+					padding 0
+					margin 0 .5em 
+
+					vertical-align top
+					i
+						padding 0
+						vertical-align top
+	.info 
+		.infoPersonal
+			display block
+			margin 0 auto
+			width 90%
+		.experiencia
+			display block
+			margin 0 auto
+			width 90%
+			text-align center
+
+
+@media (max-width: 640px)
+	.info
+		.infoPersonal
+			h1
+				font-size 2em
+	.trabajos
+		.trabajo
+			figure
+				a
+					.overlay
+						.prin
+							font-size 1em
+						.sec
+							font-size 0.8em
+			p
+				font-size 1em
+
+
+@media (max-width: 440px)
+	.trabajos
+		.trabajo
+			width 65%
+	.info
+		.experiencia
+			text-align left
+
+
+	.contacto
+		margin 0 auto
+		padding 0 0 2em 0 
+		width 95%
