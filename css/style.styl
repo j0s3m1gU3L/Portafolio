@@ -4,7 +4,7 @@ rojo = #961a1a
 cyan = #057091
 
 @import 'nib'
-vendor-prefixes = o ms mz webkit official
+vendor-prefixes = o ms moz webkit official
 
 html,body
 	font-family 'Open Sans', sans-serif
@@ -20,6 +20,7 @@ footer
 .cabecera
 	background url('../img/studio.jpg') no-repeat center center fixed
 	background-size cover
+	background-color rgba(0,0,0,0.8)
 	position relative
 	text-align center
 	#nombre
@@ -33,11 +34,16 @@ footer
 			max-width 330px
 			margin 0 auto
 			width 70%
+	.menuDark
+		background cyan !important
+		transition all ease .8s
 	.menu
-		background rgba(0,0,0,0.5)
+		background rgba(0,0,0,0.3)
 		bottom 0 
-		position absolute
+		position fixed
 		width 100%
+		z-index 100
+		transition all ease .5s
 		#menuIco
 			font-size 2em
 			color blanco
@@ -72,7 +78,7 @@ footer
 					padding 1em 0 .5em .25em 
 .contacto
 	margin 0 auto
-	padding 0 0 2em 0 
+	padding 0 0 5em 0 
 	width 80%
 	form
 		.campo
@@ -131,7 +137,6 @@ footer
 		h2
 			color cyan
 .trabajos
-	background gris
 	padding 2em 0
 	text-align center
 	h2
@@ -141,22 +146,31 @@ footer
 		margin 0 0 1.5em 0
 		width auto
 	.trabajo
+		background blanco
 		display inline-block
-		margin .6em .8em 
+		height 100%
+		margin 0 0 0 -4px
+		position relative 
 		vertical-align top
-		width 25%
+		width 50%
 		figure
+			display inline-block
 			height 100%
 			margin 0 
 			padding 0
 			overlay hidden
 			position relative
+			width 50%
+			&.fotoSec
+				margin 0 0 0 -4px
 			img
 				width 100%
 			.overlay
+				background rgba(0,0,0,0.6)
 				bottom 0 
 				position absolute
 				transition all ease 0.6s
+				top 0
 				top 0
 				width 100%
 				p
@@ -168,24 +182,100 @@ footer
 						font-size 1.5em
 					&.sec
 						font-size 1.2em
-				&:hover
-					opacity 0.8
-					background rgba(5,112,145,0.9)
-					transition all ease 1s
-					p
-						opacity 1
-						transition all ease 1s
-		a
-			color rojo
-			font-size 1.2em 
-			margin 1em 0
-			&:hover
-				transition all ease 0.6s 
+		.infoProyecto
+			display inline-block
+			height 100%
+			vertical-align top
+			width 49.2%
+			h3
 				color cyan
-		p
-			font-size 1.3em
-			color #969696
-			font-weight 300
+				font-size 1.2em
+				margin 10% auto 5%	 auto
+				width 80%
+			&.infoSec
+				margin 0 0 0 -4px
+			p
+				font-size 1em
+				color #969696
+				margin 0 auto
+				width 80%
+			.verProyecto
+				border 1px solid cyan
+				border-radius 25px
+				color cyan
+				display inline-block
+				margin .5em auto
+				padding 7px 20px 5px
+				text-transform uppercase
+				transition all ease 0.2s
+				&:after
+					content '›'
+					display inline-block
+					font-size 0
+					line-height: 5px;
+					top: -3px;
+					margin-left: 0;
+					position: relative;
+					opacity 0
+					transition all ease-in-out 0.2s
+					vertical-align baseline
+			&.infoDerecha:before
+				content ' '
+				display block
+				position absolute
+				z-index 99
+				top 50%
+				margin-left -15px
+				margin-top -15px
+				width 0
+				height 0
+				border-top 15px solid transparent
+				border-bottom 15px solid transparent
+				border-right 15px solid blanco
+			&.infoIzquierda:after
+				content ' '
+				display block
+				position absolute
+				z-index 99
+				top 50%
+				right 48%
+				margin-top -15px
+				width 0
+				height 0
+				border-top 15px solid transparent
+				border-bottom 15px solid transparent
+				border-left 15px solid blanco
+		&:hover
+			transition all ease 0.6s
+			position relative 
+			z-index 80
+			a
+				color red
+				infoProyecto
+					color cyan
+				figure
+					box-shadow 0 0 15px rgba(0,0,0,0.8)
+					.overlay
+						background none
+				.infoProyecto
+					transition all ease 0.2s	
+					.verProyecto
+						background cyan
+						color blanco
+						&:after
+							display inline-block
+							content '›'
+							font-size 2em
+							top: 3px;
+							margin-left: 16px;
+							transition all ease-in-out  0.2s
+							opacity 1
+				.infoDerecha:before
+					transition all ease 0.6s
+					opacity 0
+				.infoIzquierda:after
+					transition all ease 0.6s
+					display none
 
 
 @media (max-width: 769px)
